@@ -15,20 +15,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome  ');
+    return view('listings', [
+        'heading' => 'Latest Listings',
+        'listings' => [
+            [
+                'id' => 1,
+                'title' => 'Ake Years of Chilhood',
+                'discription' => 'Book written by Prof Wole Soyinka'
 
+            ],
+            [
+                'id' => 2,
+                'title' => 'Things fall apart',
+                'discription' => 'Book written by Chinua Achebe'
+
+            ]
+        ]
+    ]);
 });
-Route::get('/hello', function () {
-    return response('<h1>Hello welcome  <h1>', 200)
-    ->header('Content-Type', 'text/plain')
-    ->header('foo', 'bar');
-});
-Route::get('/posts/{id}', function($id){
+// Route::get('/hello', function () {
+//     return response('<h1>Hello welcome  <h1>', 200)
+//     ->header('Content-Type', 'text/plain')
+//     ->header('foo', 'bar');
+// });
+// Route::get('/posts/{id}', function($id){
    
-    return response('Post' . $id);
-})->where('id', '[0-9]+');
+//     return response('Post' . $id);
+// })->where('id', '[0-9]+');
 
-Route::get('/search', function(Request $request){
-        return ($request->name . ' ' . $request->city);
-});
-
+// Route::get('/search', function(Request $request){
+//         return ($request->name . ' ' . $request->city);
+// });

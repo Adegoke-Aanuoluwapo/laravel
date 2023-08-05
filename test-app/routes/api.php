@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+// Route::get('/post', function(){
+//     return response()->json([
+//         'posts' => [
+//             [
+//                 'title' => 'Post One'
+//             ]
+//         ]
+//     ]); 
+// });
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
