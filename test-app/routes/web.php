@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome  ');
+
 });
-Route::get('/hello', functon(){
-    return "Hello World";
+Route::get('/hello', function () {
+    return response('<h1>Hello welcome  <h1>', 200)
+    ->header('Content-Type', 'text/plain');
 });
+
