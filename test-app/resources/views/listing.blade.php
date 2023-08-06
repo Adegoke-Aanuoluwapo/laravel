@@ -11,4 +11,8 @@ l@foreach($listings as $listing)
 <h2>
  {{$listing['title']}}
 </h2>
-<p>{{$listing['discription']}}</p>
+<p>{{$listing['discription']}}</p>  
+@endforeach
+
+@else 
+<p> No listings found</p>
