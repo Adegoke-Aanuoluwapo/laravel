@@ -1,18 +1,15 @@
-<?php
+<h1>{{$heading}}</h1>
+@php
+    $test
+@endphp
 
-<h1>{count($listings)}</h1>
+@foreach($listings as $listing)
 
-@unless{count($listing)==0}
-
-
-
-
-l@foreach($listings as $listing)
 <h2>
- {{$listing['title']}}
+ {{$listing['title']}} 
 </h2>
-<p>{{$listing['discription']}}</p>  
-@endforeach
 
-@else 
-<p> No listings found</p>
+<p>
+ {{$listing['description']}}
+</p>
+@endforeach

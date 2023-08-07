@@ -21,13 +21,13 @@ Route::get('/', function () {
             [
                 'id' => 1,
                 'title' => 'Ake Years of Chilhood',
-                'discription' => 'Book written by Prof Wole Soyinka'
+                'description' => 'Book written by Prof Wole Soyinka'
 
             ],
             [
                 'id' => 2,
                 'title' => 'Things fall apart',
-                'discription' => 'Book written by Chinua Achebe'
+                'description' => 'Book written by Chinua Achebe'
 
             ]
         ]
