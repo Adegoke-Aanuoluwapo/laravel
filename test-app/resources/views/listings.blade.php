@@ -15,3 +15,8 @@
  {{$listing['description']}}
 </p>
 @endforeach
+
+    
+@else
+<p></p>    
+@endunless
