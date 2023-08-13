@@ -18,5 +18,5 @@
 
     
 @else
-<p></p>    
+<p>No listing found</p>    
 @endunless
