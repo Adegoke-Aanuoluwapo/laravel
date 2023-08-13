@@ -14,22 +14,19 @@ use App\Models\Listing;
 |
 */
 
+// All listing
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'Latest Listings',
         'listings' => Listing::all()
     ]);
 });
-// Route::get('/hello', function () {
-//     return response('<h1>Hello welcome  <h1>', 200)
-//     ->header('Content-Type', 'text/plain')
-//     ->header('foo', 'bar');
-// });
-// Route::get('/posts/{id}', function($id){
-   
-//     return response('Post' . $id);
-// })->where('id', '[0-9]+');
 
-// Route::get('/search', function(Request $request){
-//         return ($request->name . ' ' . $request->city);
-// });
+
+// Single Listing
+
+Route::get('/listings/{id}', function($id) {
+    return view('Listing', [
+        'listing' => Listing::find($id)
+    ]);
+})
