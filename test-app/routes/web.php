@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Listing;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,22 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'Latest Listings',
-        'listings' => [
-
-            [
-                'id' => 1,
-                'title' => 'Ake Years of Chilhood',
-                'description' => 'Book written by Prof Wole Soyinka'
-
-            ],
-            [
-                'id' => 2,
-                'title' => 'Things fall apart',
-                'description' => 'Book written by Chinua Achebe'
-
-            ]
-           
-        ]
+        'listings' => Listing::all()
     ]);
 });
 // Route::get('/hello', function () {

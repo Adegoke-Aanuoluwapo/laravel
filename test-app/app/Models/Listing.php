@@ -1,5 +1,5 @@
 <?php 
-namespace App\Models\Listing;
+namespace App\Models;
 
 
 class Listing {
@@ -7,7 +7,7 @@ class Listing {
 
  public static function all() {
  return[
-  
+   
   [
                 'id' => 1,
                 'title' => 'Ake Years of Chilhood',
