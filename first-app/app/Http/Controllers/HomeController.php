@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-         return '<h1>You are Welcome </h1>';
+         return view('welcome');
     }
     public function about()
     {
