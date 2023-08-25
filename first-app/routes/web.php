@@ -19,13 +19,20 @@ Route::get('/', function () {
 Route::get('/about', function(){
     return 'Hello lara';
 });
+Route::get('/contact', function () {
+    return 'contact lara';
+});
 Route::get('/menu', function(){
     return '<h2>Our Menu are great<h2>';
 });
-Route::get('/store', function () {
-    $category = request('category');
+Route::get("/store/{category?}/{item?}", function ($category= null, $item=null) {
+    
     if (isset($category)) {
-        return 'you are viewing the store' . ' ' . strip_tags($category);
+        if(isset($item)){
+            return "you are viewing the store for {$category} for {$item}";
+        }
+        return 'you are viewing the store for ' . strip_tags($category);
+       
     }
     return 'you are viewing all instruments';
 }); 
