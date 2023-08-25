@@ -10,6 +10,6 @@
  <h1>Laragigs</h1>
 
   <!-- {{--VIEW OUTPUT --}}  -->
- @yield('content')
+   @yield('content')
 </body>
 </html>
