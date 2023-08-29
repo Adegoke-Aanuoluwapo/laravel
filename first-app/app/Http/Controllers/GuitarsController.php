@@ -7,13 +7,26 @@ use Illuminate\Http\Request;
 
 class GuitarsController extends Controller
 {
+    private static function getData()
+    {
+        return [
+            ['id' => 1, 'name' => 'Amenrican Standard Strat', 'brand' => 'Feeder'],
+            ['id' => 2, 'name' => 'Starla S2', 'brand' => 'RRS'],
+            ['id' => 3, 'name' => 'Explorer', 'brand' => 'Gibson'],
+            ['id' => 4, 'name' => 'talman', 'brand' => 'Ibanez']
+        ];
+    }
     /**
      * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Http\Response;
      */
+   
     public function index()
     {
         //
-        return view('index');
+        return view('guitars.index', ['guitars' => self::getData(), 'userInput' => '<script>alert("Hello")</script>'
+    ]);
     }
 
     /**
