@@ -25,8 +25,8 @@ class GuitarsController extends Controller
     public function index()
     {
         //
-        return view('guitars.index', ['guitars' => self::getData(), 'userInput' => '<script>alert("Hello")</script>'
-    ]);
+       return view('guitars.index');
+      
     }
 
     /**
