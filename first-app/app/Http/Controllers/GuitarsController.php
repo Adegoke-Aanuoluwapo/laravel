@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Guitar;
+use App\Models\Guitar;
 
 class GuitarsController extends Controller
 {
@@ -27,7 +27,7 @@ class GuitarsController extends Controller
     {
        // return view('index');
        return view('guitars.index', [
-        'guitars' =>self::getData(), 
+        'guitars' =>Guitar::all(), 
         'userInput'=> '<script>alert("Hello")</script>'
        ]);
       
