@@ -5,13 +5,14 @@
           @foreach ($guitars as $guitar)
                <div>
                     <h2>
-                         {{$guitar['name']}}
+                       <a href="{{ route('guitars.show', ['guitar'=>$guitar('id')])}}" > {{$guitar['name']}}</a>
+                    </h2>
     
                          <ul>
                               <li>Made by: {{$guitar['brand']}}</li>
      
                          </ul>
-                    </h2>
+                    
                </div>    
           @endforeach
      @else

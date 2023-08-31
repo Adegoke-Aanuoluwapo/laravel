@@ -11,10 +11,10 @@ class GuitarsController extends Controller
     private static function getData()
     {
         return [
-            // ['id' => 1, 'name' => 'Amenrican Standard Strat', 'brand' => 'Feeder'],
-            // ['id' => 2, 'name' => 'Starla S2', 'brand' => 'RRS'],
-            // ['id' => 3, 'name' => 'Explorer', 'brand' => 'Gibson'],
-            // ['id' => 4, 'name' => 'talman', 'brand' => 'Ibanez']
+            ['id' => 1, 'name' => 'Amenrican Standard Strat', 'brand' => 'Feeder'],
+            ['id' => 2, 'name' => 'Starla S2', 'brand' => 'RRS'],
+            ['id' => 3, 'name' => 'Explorer', 'brand' => 'Gibson'],
+            ['id' => 4, 'name' => 'talman', 'brand' => 'Ibanez']
         ];
     }
     /**
@@ -51,14 +51,14 @@ class GuitarsController extends Controller
 
     /**
      * Display the specified resource.
-     * @param int
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show($guitar)
     {
         //GET
         $guitars = self::getData();
-        $index = array_search($id, array_column($guitars, 'id'));
+        $index = array_search($guitar, array_column($guitars, 'id'));
         if($index ===false){
             abort(404);
         }
