@@ -1,17 +1,20 @@
 @extends('layout')
 @section('content')
-<div class="max-w-7xl mx-auto p-6 lg:p-8">
- @foreach ($guitars as $guitar)
-<div>
-     <h2>
-      {{$guitar['name']}}
-     </h2>
-     <ul>
-      <li>Made by: {{$guitar['brand']}}</li>
+<div class="max-w-6xl mx-auto sm:p-6 lg:p-8">
+     @if (count($guitars) > 0)
+          @foreach ($guitars as $guitar)
+               <div>
+                    <h2>
+                         {{$guitar['name']}}
+    
+                         <ul>
+                              <li>Made by: {{$guitar['brand']}}</li>
      
      </ul>
+      </h2>
 </div>    
  @endforeach
+
                                                                                                                                                                                                                        
 <div>
  User Input: {{$userInput}}
