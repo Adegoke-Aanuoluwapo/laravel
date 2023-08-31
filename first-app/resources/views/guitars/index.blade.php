@@ -15,6 +15,7 @@
                                                   <ul>
                               <li>Year made: {{$guitar['year_made']}}</li>
      
+                 
                          </ul>
                     
                </div>    
