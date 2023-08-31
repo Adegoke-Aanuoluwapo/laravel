@@ -10,15 +10,16 @@
                          <ul>
                               <li>Made by: {{$guitar['brand']}}</li>
      
-     </ul>
-      </h2>
-</div>    
- @endforeach
-
-                                                                                                                                                                                                                       
-<div>
- User Input: {{$userInput}}
-</div>
+                         </ul>
+                    </h2>
+               </div>    
+          @endforeach
+     @else
+          <h2>There are no guitars to display </h2>
+     @endif                                                                                                                                                                                                                
+               <div>
+                     User Input: {{$userInput}}
+               </div>
 
 </div>
 @endsection 

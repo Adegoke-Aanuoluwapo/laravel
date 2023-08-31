@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class GuitarsController extends Controller
 {
@@ -50,10 +51,20 @@ class GuitarsController extends Controller
 
     /**
      * Display the specified resource.
+     * @param int
+     * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        //GET
+        $guitars = self::getData();
+        $index = array_search($id, array_column($guitars, 'id'));
+        if($index ===false){
+            abort(404);
+        }
+        return view('guitars.show', [
+            'guitar' => $guitars[$index]
+        ]);
     }
 
     /**
