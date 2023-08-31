@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use App\Model\Guitar;
 
 class GuitarsController extends Controller
 {
@@ -45,9 +45,18 @@ class GuitarsController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @param \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $guitar = new Guitar();
+        $guitar-> name = $request->input('guitar-name');
+        $guitar->brand = $request->input('brand');
+        $guitar->year_made = $request->input('year');
+
+        $guitar->save();
+        return redirect()->route('guitars.index');
         //
     }
 
