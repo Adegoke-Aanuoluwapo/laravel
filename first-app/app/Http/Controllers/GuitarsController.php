@@ -19,13 +19,16 @@ class GuitarsController extends Controller
     /**
      * Display a listing of the resource.
      * 
-     * @return \Illuminate\Http\Response;
+     * @return \Illuminate\Http\Response
      */
    
     public function index()
     {
-        //
-       return view('guitars.index');
+       // return view('index');
+       return view('guitars.index', [
+        'guitars' =>self::getData(), 
+        'userInput'=> '<script>alert("Hello")</script>'
+       ]);
       
     }
 

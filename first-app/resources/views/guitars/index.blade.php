@@ -12,7 +12,7 @@
      </ul>
 </div>    
  @endforeach
- 
+                                                                                                                                                                                                                       
 <div>
  User Input: {{$userInput}}
 </div>
