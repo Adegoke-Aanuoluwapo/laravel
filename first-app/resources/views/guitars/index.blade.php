@@ -5,7 +5,7 @@
           @foreach ($guitars as $guitar)
                <div>
                     <h2>
-                       <a href="{{ route('guitars.show', ['guitar'=>$guitar('id')])}}" > {{$guitar['name']}}</a>
+                       <a href="{{ route('guitars.show', ['guitar'=>$guitar['id']])}}" > {{$guitar['name']}}</a>
                     </h2>
     
                          <ul>
