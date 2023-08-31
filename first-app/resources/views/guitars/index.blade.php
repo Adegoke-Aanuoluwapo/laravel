@@ -4,10 +4,10 @@
  @foreach ($guitars as $guitar)
 <div>
      <h2>
-      {{$guitar{'name'}}}
+      {{$guitar['name']}}
      </h2>
      <ul>
-      <li>Made by: {{$guitar{'brand'}}}</li>
+      <li>Made by: {{$guitar['brand']}}</li>
      
      </ul>
 </div>    
