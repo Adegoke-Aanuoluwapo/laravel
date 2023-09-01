@@ -7,6 +7,9 @@
   <div>
    <label class="text-sm" for="guitar-name">Guitar Name</label>
    <input class="text-lg border-1" type="text" id="guitar-name" name="guitar-name">
+   @error('record')
+       
+   @enderror
   </div>
   <div>
    <label class="text-sm" for="brand">Brand</label>
