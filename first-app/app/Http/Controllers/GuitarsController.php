@@ -74,11 +74,11 @@ class GuitarsController extends Controller
     public function show($guitar)
     {
         //GET
-        $record = Guitar::findOrFail($guitar);
+        
        
         
         return view('guitars.show', [
-            'guitar' => $record
+            'guitar' => Guitar::findOfFail($guitar)
         ]);
     }
 
