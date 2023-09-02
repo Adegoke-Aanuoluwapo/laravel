@@ -78,16 +78,21 @@ class GuitarsController extends Controller
        
         
         return view('guitars.show', [
-            'guitar' => Guitar::findOfFail($guitar)
+            'guitar' => Guitar::findOrFail($guitar)
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
+     * @param int $id
+     * @return \Illuminate\Http\Response
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
         //
+        return view('guitars.show', [
+            'guitar' => Guitar::findOrFail($guitar)
+        ]);
     }
 
     /**
