@@ -74,6 +74,7 @@ class GuitarsController extends Controller
     public function show($guitar)
     {
         //GET
+        $record = Guitar::find($guitar);
         $guitars = self::getData();
         $index = array_search($guitar, array_column($guitars, 'id'));
         if($index ===false){
