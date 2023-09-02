@@ -87,7 +87,7 @@ class GuitarsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)
+    public function edit($guitar)
     {
         //
         return view('guitars.show', [
