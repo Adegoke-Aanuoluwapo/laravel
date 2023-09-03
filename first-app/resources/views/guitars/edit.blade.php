@@ -15,7 +15,7 @@
   </div>
   <div>
    <label class="text-sm" for="brand">Brand</label>
-   <input class="text-lg border-1" type="text" id="brand" name="brand" value="{{old('brand')}}">
+   <input class="text-lg border-1" type="text" id="brand" name="brand" value="{{$guitar['brand']}}">
     @error('brand')
     <div class="form-error">
       {{$message}}
@@ -24,7 +24,7 @@
   </div>
   <div>
    <label class="text-sm" for="year">Year Made</label>
-   <input class="text-lg border-1" type="text" id="year" name="year" value="{{old('year')}}">
+   <input class="text-lg border-1" type="text" id="year" name="year" value="{{$guitar['year']}}">
     @error('year')
     <div class="form-error">
       {{$message}}
