@@ -2,8 +2,9 @@
 
 @section('content')
 <div class="max-m 6xl mx-auto sm:px-6 lg:px-8">
-<form class="form bg-white px-6 border-1" method="PUT" action="{{route('guitars.update' ['guitar'=> $guitar->$id])}}">
+<form class="form bg-white px-6 border-1" method="PUT" action="{{route('guitars.update' ['guitar'-> $guitar->$id])}}">
  @csrf
+ @method("PUT")
   <div>
    <label class="text-sm" for="guitar-name">Guitar Name</label>
    <input class="text-lg border-1" type="text" id="guitar-name" name="guitar-name" value="{{$guitar['name']}}">
