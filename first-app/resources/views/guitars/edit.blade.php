@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-m 6xl mx-auto sm:px-6 lg:px-8">
-<form class="form bg-white px-6 border-1" method="POST" action="{{route('guitars.update' ['guitar', $guitar->cou])}}">
+<form class="form bg-white px-6 border-1" method="POST" action="{{route('guitars.update' ['guitar'=> $guitar->$id])}}">
  @csrf
   <div>
    <label class="text-sm" for="guitar-name">Guitar Name</label>
