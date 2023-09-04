@@ -110,10 +110,10 @@ class GuitarsController extends Controller
 
         $record = new Guitar::findOrFail($guitar);
         $record->name = strip_tags($request->input('guitar-name'));
-        $guitar->brand = strip_tags($request->input('brand'));
-        $guitar->year_made = strip_tags($request->input('year'));
+        $record->brand = strip_tags($request->input('brand'));
+        $record->year_made = strip_tags($request->input('year'));
 
-        $guitar->save();
+        $recordr->save();
     }
 
     /**
