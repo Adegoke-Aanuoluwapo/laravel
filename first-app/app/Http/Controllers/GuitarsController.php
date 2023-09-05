@@ -98,7 +98,7 @@ class GuitarsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $guitar)
+    public function update(Request $request, Guitar $guitar)
     {
         //
 
@@ -108,13 +108,13 @@ class GuitarsController extends Controller
             'year' => ['required', 'integer'],
         ]);
 
-      $record =  Guitar::findOrFail($guitar);
-        $record->name = strip_tags($request->input('guitar-name'));
-        $record->brand = strip_tags($request->input('brand'));
-        $record->year_made = strip_tags($request->input('year'));
+      
+        $guitar->name = strip_tags($request->input('guitar-name'));
+        $guitar->brand = strip_tags($request->input('brand'));
+        $guitar->year_made = strip_tags($request->input('year'));
 
-        $record->save();
-        return redirect()->route('guitars.show', $guitar);
+        $guitar->save();
+        return redirect()->route('guitars.show', $guitar->id);
     }
 
     /**
