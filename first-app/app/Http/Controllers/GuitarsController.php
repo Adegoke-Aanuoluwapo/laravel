@@ -108,12 +108,12 @@ class GuitarsController extends Controller
             'year' => ['required', 'integer'],
         ]);
 
-        $record = new Guitar::findOrFail($guitar);
+      $record = new Guitar();
         $record->name = strip_tags($request->input('guitar-name'));
         $record->brand = strip_tags($request->input('brand'));
         $record->year_made = strip_tags($request->input('year'));
 
-        $recordr->save();
+        $record->save();
     }
 
     /**

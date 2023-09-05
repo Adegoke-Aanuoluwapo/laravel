@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-m 6xl mx-auto sm:px-6 lg:px-8">
-<form class="form bg-white px-6 border-1" method="PUT" action="{{route('guitars.update' ['guitar'-> $guitar->$id])}}">
+<form class="form bg-white px-6 border-1" method="POST " action="{{route('guitars.update', ['guitar'->$guitar->$id])}}">
  @csrf
  @method("PUT")
   <div>
@@ -25,7 +25,7 @@
   </div>
   <div>
    <label class="text-sm" for="year">Year Made</label>
-   <input class="text-lg border-1" type="text" id="year" name="year" value="{{$guitar->year}}">
+   <input class="text-lg border-1" type="text" id="year" name="year_made" value="{{$guitar->year_made}}">
     @error('year')
     <div class="form-error">
       {{$message}}
