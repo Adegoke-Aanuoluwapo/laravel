@@ -87,11 +87,11 @@ class GuitarsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($guitar)
+    public function edit($id)
     {
         //
-        return view('guitars.show', [
-            'guitar' => Guitar::findOrFail($guitar)
+        return view('guitars.edit', [
+            'guitar' => Guitar::findOrFail($id)
         ]);
     }
 
