@@ -31,7 +31,7 @@ class GuitarformRequest extends FormRequest
         $this->merge([
             'guitar-name' => strip_tags($this['guitar-name']),
             'brand' => strip_tags($this->brand),
-            'year' => strip_tags($this->year)
+            'year' =>  strip_tags($this->year)
         ]);
     }
 }
