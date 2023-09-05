@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Guitar;
+use App\Http\Requests\GuitarformRequest;
 
 class GuitarsController extends Controller
 {
@@ -48,18 +49,15 @@ class GuitarsController extends Controller
      * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GuitarformRequest $request)
     {
-        $request->validate([
-            'guitar-name'=> 'required',
-            'brand' => 'required',
-            'year' => ['required', 'integer'],
-        ]);
+        $data = $request->validated();
+       
 
         $guitar = new Guitar( );
-        $guitar->name = strip_tags($request->input('guitar-name'));
-        $guitar->brand = strip_tags($request->input('brand'));
-        $guitar->year_made = strip_tags($request->input('year'));
+        $guitar->name = $data['guitar-name'];
+        $guitar->brand = $data['brand'];
+        $guitar->year_made = $data['year'];
 
         $guitar->save();
         return redirect()->route('guitars.index');
@@ -101,17 +99,11 @@ class GuitarsController extends Controller
     public function update(Request $request, Guitar $guitar)
     {
         //
-
-        $request->validate([
-            'guitar-name' => 'required',
-            'brand' => 'required',
-            'year' => ['required', 'integer'],
-        ]);
-
+        $data = $request->validated();
       
-        $guitar->name = strip_tags($request->input('guitar-name'));
-        $guitar->brand = strip_tags($request->input('brand'));
-        $guitar->year_made = strip_tags($request->input('year'));
+        $guitar->name = $data['guitar-name'];
+        $guitar->brand = $data['brand'];
+        $guitar->year_made = $data['year'];
 
         $guitar->save();
         return redirect()->route('guitars.show', $guitar->id);
