@@ -52,12 +52,12 @@ class GuitarsController extends Controller
     {
         $request->validate([
             'guitar-name'=> 'required',
-        'brand' => 'required',
-        'year' => ['required', 'integer'],
+            'brand' => 'required',
+            'year' => ['required', 'integer'],
         ]);
 
         $guitar = new Guitar( );
-        $guitar-> name = strip_tags($request->input('guitar-name'));
+        $guitar->name = strip_tags($request->input('guitar-name'));
         $guitar->brand = strip_tags($request->input('brand'));
         $guitar->year_made = strip_tags($request->input('year'));
 
@@ -71,7 +71,7 @@ class GuitarsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($guitar)
+    public function show(Guitar $guitar)
     {
         //GET
         
@@ -87,18 +87,18 @@ class GuitarsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($guitar)
+    public function edit(Guitar $guitar)
     {
         //
         return view('guitars.edit', [
-            'guitar' => Guitar::findOrFail($guitar)
+            'guitar' => $guitar
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $guitar)
     {
         //
 
@@ -108,12 +108,13 @@ class GuitarsController extends Controller
             'year' => ['required', 'integer'],
         ]);
 
-      $record = new Guitar();
+      $record =  Guitar::findOrFail($guitar);
         $record->name = strip_tags($request->input('guitar-name'));
         $record->brand = strip_tags($request->input('brand'));
         $record->year_made = strip_tags($request->input('year'));
 
         $record->save();
+        return redirect()->route('guitars.show', $guitar);
     }
 
     /**
