@@ -96,11 +96,7 @@ class GuitarsController extends Controller
         $data = $request->validated();
         $guitar ->update($data);
       
-        $guitar->name = $data['guitar-name'];
-        $guitar->brand = $data['brand'];
-        $guitar->year_made = $data['year'];
-
-        $guitar->save();
+       
         return redirect()->route('guitars.show', $guitar->id);
     }
 

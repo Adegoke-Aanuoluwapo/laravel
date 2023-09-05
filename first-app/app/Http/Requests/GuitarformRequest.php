@@ -22,16 +22,16 @@ class GuitarformRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'guitar-name' => 'required',
+            'name' => 'required',
             'brand' => 'required',
-            'year' => ['required', 'integer']
+            'year_made' => ['required', 'integer']
         ];
     }
     protected function prepareForValidation(){
         $this->merge([
-            'guitar-name' => strip_tags($this['guitar-name']),
+            'guitar-name' => strip_tags($this->name),
             'brand' => strip_tags($this->brand),
-            'year' =>  strip_tags($this->year)
+            'year_made' =>  strip_tags($this->year_made)
         ]);
     }
 }

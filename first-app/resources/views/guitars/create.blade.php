@@ -6,7 +6,7 @@
  @csrf
   <div>
    <label class="text-sm" for="guitar-name">Guitar Name</label>
-   <input class="text-lg border-1" type="text" id="guitar-name" name="guitar-name" value="{{old('guitar-name')}}">
+   <input class="text-lg border-1" type="text" id="guitar-name" name="guitar-name" value="{{old('name')}}">
    @error('guitar-name')
     <div class="form-error">
       {{$message}}
@@ -24,7 +24,7 @@
   </div>
   <div>
    <label class="text-sm" for="year">Year Made</label>
-   <input class="text-lg border-1" type="text" id="year" name="year" value="{{old('year')}}">
+   <input class="text-lg border-1" type="text" id="year" name="year_made" value="{{old('year_made')}}">
     @error('year')
     <div class="form-error">
       {{$message}}
