@@ -51,15 +51,9 @@ class GuitarsController extends Controller
      */
     public function store(GuitarformRequest $request)
     {
+        //POST
         $data = $request->validated();
-       
-
-        $guitar = new Guitar( );
-        $guitar->name = $data['guitar-name'];
-        $guitar->brand = $data['brand'];
-        $guitar->year_made = $data['year'];
-
-        $guitar->save();
+        Guitar::create($data);
         return redirect()->route('guitars.index');
         //
     }
@@ -96,10 +90,11 @@ class GuitarsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Guitar $guitar)
+    public function update(GuitarformRequest $request, Guitar $guitar)
     {
         //
         $data = $request->validated();
+        $guitar ->update($data);
       
         $guitar->name = $data['guitar-name'];
         $guitar->brand = $data['brand'];
