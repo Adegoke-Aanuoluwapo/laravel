@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Process;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', function (){
-   return Process::run('ls - la')-> output();
+Route::get('/', function () {
+    return view('welcome');
 });
+// Route::get('/', function (){
+//    return Process::run('ls - la')-> output();
+// });
